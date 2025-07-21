@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { initFlowbite } from 'flowbite';
 
 
 const Sidebar = () => {
+  useEffect(() => {
+    initFlowbite();
+  }, []);
+
   return (
     <div>
         <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -52,13 +58,13 @@ const Sidebar = () => {
                             </div>
                             <ul class="py-1" role="none">
                                 <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Painel Principal</a>
+                                <Link to="/home" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Painel Principal</Link>
                                 </li>
                                 <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Configurações</a>
+                                <Link to="/configuracoes" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Configurações</Link>
                                 </li>
                                 <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sair</a>
+                                <Link to="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sair</Link>
                                 </li>
                             </ul>
                         </div>
@@ -72,13 +78,13 @@ const Sidebar = () => {
         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
             <ul class="space-y-2 font-medium">
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <Link to="/home" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21" className='size-6'>
                         <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
                         <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
                     </svg>
                     <span class="ms-3">Painel Principal</span>
-                    </a>
+                    </Link>
                 </li>
 
                 <li>
@@ -101,19 +107,19 @@ const Sidebar = () => {
                     </button>
                     <ul id="dropdown-example" class="hidden py-2 space-y-2">
                   <li>
-                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <Link to="/senhas" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="size-5">
                         <path fill="#ffffffff" d="M2 19v-1.525h20V19H2Zm0.95 -6.35 -1 -0.55 1 -1.7H1v-1.125h1.95l-1 -1.7 1 -0.55 0.95 1.675 0.95 -1.675 1 0.55 -1 1.7h1.95v1.125H4.85l1 1.7 -1 0.55 -0.95 -1.675 -0.95 1.675Zm8.1 0 -1 -0.6 1 -1.7h-1.95v-1.125h1.95l-1 -1.7 1 -0.55L12 8.65l0.95 -1.675 1 0.55 -1 1.7h1.95v1.125h-1.95l1 1.7 -1 0.6 -0.95 -1.675 -0.95 1.675Zm8.1 0 -1 -0.6 1 -1.7h-1.95v-1.125h1.95l-1 -1.7 1 -0.55 0.95 1.675 0.95 -1.675 1 0.55 -1 1.7H23v1.125h-1.95l1 1.7 -1 0.6 -0.95 -1.675 -0.95 1.675Z" stroke-width="0.5"></path></svg>
                         <span class="flex-1 ms-2 whitespace-nowrap">Senhas</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                    <Link to="/configuracao" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                         <path fillRule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
                         </svg>
                         <span class="flex-1 ms-2 whitespace-nowrap">Configuração</span>
-                    </a>
+                    </Link>
                   </li>
                     </ul>
                 </li>
