@@ -2,23 +2,6 @@ import React, { useEffect } from 'react';
 
 
 const Sidebar = () => {
-    useEffect(() => {
-  const btn = document.querySelector('[data-collapse-toggle="dropdown-example"]');
-
-  if (!btn) return;
-
-  const toggleClass = () => {
-    btn.classList.toggle('bg-gray-100');
-    btn.classList.toggle('dark:bg-gray-700');
-  };
-
-  btn.addEventListener('click', toggleClass);
-
-  return () => {
-    btn.removeEventListener('click', toggleClass); // cleanup
-  };
-}, []);
-
   return (
     <div>
         <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -55,7 +38,7 @@ const Sidebar = () => {
                         <div>
                         <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                             <span class="sr-only">Abrir menu</span>
-                            <img className="w-8 h-8 rounded-full" src="https://www.allonsohenzo.com.br/images/intro.jpg" alt="user photo"/>
+                            <img className="w-10 h-10 rounded-full" src="https://www.allonsohenzo.com.br/images/intro.jpg" alt="user photo"/>
                         </button>
                         </div>
                             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
